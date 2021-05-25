@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<h3>@ViewBag.data</h3>
+<hr/>
+
+<h1>Specify your preferences:</h1>
+<form asp-action="WriteCookies" asp-controller="DataPersistantDemo">
+    <select name="setting">
+        <option value="fontName">Font Name</option>
+        <option value="fontSize">Font Size</option>
+        <option value="color">Color</option>
+    </select>
+    <input type="text" name="settingValue" />
+    <input type="checkbox" name="isPersistant" value="true"/>Is Persistent?
+    <input type="submit" name="Write Cookie" />
+
+</form>
+<h4>@ViewBag.Message</h4>
+<h4>
+    <a asp-action="ReadCookies" asp-controller="DataPersistantDemo">
+        Read Cookies
+    </a>
+</h4>
